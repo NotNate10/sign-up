@@ -4,8 +4,16 @@
         <title> Sign Up </title>
 
         <style>
-            
-            .first, .last, .email {
+            body {
+                margin: 0;
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 116, 116, 0.3);
+            }
+            .first, .last{
+                width: 98%;
                 padding-top: 10px;
                 padding-bottom: 10px;
                 font-size: 16px;
@@ -15,13 +23,16 @@
                 background-color: rgba(20, 60, 255, 0.1);
             }
 
-            .first , .last {
-                width: 243px;
-            }
-
             .email {
                 display: block;
                 width: 494px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 16px;
+                border-radius: 4px;
+                border-width: 1px;
+                font-family: Arial;
+                background-color: rgba(20, 60, 255, 0.1);
             }
 
             button {
@@ -75,12 +86,14 @@
                 box-shadow: 1px 2px 5px rgb(128, 128, 128);
             }
 
-            .fs {
-                display: inline-block;
-                width: 248px;
-            }
 
             .holders {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 7px;
+            }
+
+            .holders-n {
                 margin-top: 7px;
             }
 
@@ -136,15 +149,14 @@
                 </div>
             </div>
 
-            <div class="holders">
+            <div class="holders-n">
                 <input type="email" class="email" placeholder="Email">
             </div>
             
-            <div class="holders">
+            <div class="holders-n">
                 <button> Sign Up </button>
             </div>
             
         </div>
     </body>
-
 </html>
