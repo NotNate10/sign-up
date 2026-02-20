@@ -1,161 +1,199 @@
 <!DOCTYPE html>
 <html>
-    <head> 
-        <title> Sign Up </title>
+    <head>
+        <title> Responsive Website </title>
 
         <style>
             body {
-                margin: 0;
+                padding-top: 60px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 60px;
+            }
+
+            .main-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: .5em;
+            }
+
+            .main-container div {
+                display: grid;
+                grid-template-rows: 1fr 50px;
+                grid-template-columns: 1fr;
+                border: solid;
+                border-width: 1px;
+                border-color: white;
+            }
+
+            .main-container div div {
                 display: flex;
-                height: 100vh;
                 justify-content: center;
                 align-items: center;
-                background-color: rgba(0, 116, 116, 0.3);
-            }
-            .first, .last{
-                width: 98%;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                font-size: 16px;
-                border-radius: 4px;
-                border-width: 1px;
-                font-family: Arial;
-                background-color: rgba(20, 60, 255, 0.1);
             }
 
-            .email {
-                display: block;
-                width: 494px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                font-size: 16px;
-                border-radius: 4px;
-                border-width: 1px;
-                font-family: Arial;
-                background-color: rgba(20, 60, 255, 0.1);
+            .placeholders {
+                height: 300px;
+                background-color: rgb(99, 99, 99);
             }
 
-            button {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                display: block;
-                font-size: 20px;
-                background-color: rgb(0, 0, 0);
-                color: white;
-                border: none;
-                border-radius: 5px;
-                font-weight: bold;
-                font-family: Arial;
+            .topbar {
+                position: fixed;
+                background-color: lightblue;
+                top: 0;
+                left: 0;
                 width: 100%;
-                cursor: pointer;
+                min-height: 50px;
+
+                display: grid;
+                grid-template-columns: 100px 1fr 100px;
+                place-content: center;
+            }
+
+            .topbar div {
+                border: solid;
+                border-width: 1px;
+                border-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .sidebar {
+                position: fixed;
+                background-color: lightpink;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                min-height: 50px;
+
+                display: flex;
+                flex-direction: row;
+            }
+
+            .sidebar div {
+                flex: 1;
+                max-height: 100px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .sidebar div button {
+                border: none;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(128, 128, 128);
                 transition: scale 0.15s, background-color 0.15s;
             }
 
-            button:hover {
-                background-color: rgba(0, 0, 0, 0.8);
-                
+            .sidebar div button:hover {
+                background-color: rgba(128, 128, 128, 0.5);
             }
 
-            button:active {
-                scale: 95%;
-            }
-
-            .cancel {
-                width: 40px;
-                padding: 0;
-                display: inline-block;
-                padding-bottom: 5px;
-                margin-left: 460px;
-                background-color: rgb(150, 0, 0, 0.8);
-            }
-
-            .cancel:hover {
-                background-color: rgba(150, 0, 0, 1);
-            }
-
-            .main-div {
-                display: inline-block;
-                width: 500px;
-                border: solid;
-                border-color: rgb(96, 96, 96);
-                border-width: 1px;
-                border-radius: 10px;
-                padding: 10px;
-                background-color: rgb(240, 248, 255);
-                box-shadow: 1px 2px 5px rgb(128, 128, 128);
+            .sidebar div button:active {
+                scale: 90%;
             }
 
 
-            .holders {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: 7px;
+            @media (min-width: 768px) {
+                .main-container {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                .sidebar {
+                    left: 0;
+                    top: 50px;
+                    width: 50px;
+                    height: 100%;
+                    bottom: auto;
+
+                    flex-direction: column;
+                }
+
+                body {
+                    padding-left: 60px;
+                    padding-top: 60px;
+                }
             }
 
-            .holders-n {
-                margin-top: 7px;
+            @media (min-width: 1024px) {
+                .main-container {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
             }
 
-            .top-view {
-                margin-top: 7px;
-                margin-bottom: 35px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            @media (min-width: 1921px) {
+                .main-container {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
             }
 
-            .page-logo {
-                width: 80px;
-                margin-right: 10px;
-                border: solid;
-                border-width: 1px;
-                border-radius: 40px;
-                border-color: lightseagreen;
-            }
-
-            .sign-in-text {
-                font-family: Arial;
-                font-size: 25px;
-                font-weight: 500;
-            }
-
-            .sign-in-text-web-name {
-                font-weight: 700;
-            }
         </style>
     </head>
 
     <body>
-        <div class="main-div">
+        <div class="topbar">
+            <div>left</div>
+            <div>middle</div>
+            <div>right</div>
+        </div>
+
+        <div class="main-container">
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+            <div class="placeholders">
+                <div>text</div>
+                <div>button</div>
+            </div>
+        </div>
+
+        <div class="sidebar">
             <div>
-                <button class="cancel">✖</button>
+                <button> click 1 </button>
             </div>
-            <div class="top-view">
-                <img src="pics/Logo.png" class="page-logo">
-                <p class="sign-in-text">
-                    <span class="sign-in-text-web-name">My website</span> <br>
-                    Create an account
-                </p>
+            <div>
+                <button> click 2 </button>
             </div>
-
-            <div class="holders">
-                <div class="fs">
-                    <input type="text" class="first" placeholder="First name">
-                </div>
-
-                <div class="fs">
-                    <input type="text" class="last" placeholder="Last name">
-                </div>
+            <div>
+                <button> click 3 </button>
             </div>
-
-            <div class="holders-n">
-                <input type="email" class="email" placeholder="Email">
+            <div>
+                <button> click 4 </button>
             </div>
-            
-            <div class="holders-n">
-                <button> Sign Up </button>
-            </div>
-            
         </div>
     </body>
 </html>
